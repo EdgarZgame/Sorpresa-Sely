@@ -10,7 +10,7 @@ body {
 min-height: 100vh;
   background: 
     linear-gradient(rgba(255, 120, 150, 0.4), rgba(255, 182, 193, 0.4)),
-    url('Imagenes/fondo.jpg') center/cover no-repeat;
+    url('fondo.jpg') center/cover no-repeat;
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
   display: flex;
