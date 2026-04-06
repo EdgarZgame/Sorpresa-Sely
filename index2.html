@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regalo Sorpresa</title>
+  <link rel="stylesheet" href="style2.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<audio id="musica-cumple" loop>
+        <source src="audio/Happy Birthday (lofi).mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="header">
+        <h1>Un pedacito de tí en mí</h1>
+        <p>Cada foto es un recuerdo que guardo en el corazón...</p>
+    </div>
+
+    <div class="mural">
+        <div class="polaroid">
+            <img src="fotos/foto1.jpeg" alt="Recuerdo">
+            <span>Te quiero mucho</span>
+        </div>
+
+        <div class="polaroid">
+            <img src="fotos/foto2.jpeg" alt="Recuerdo">
+            <span>En este dia bonito</span>
+        </div>
+
+        <div class="polaroid">
+            <img src="fotos/foto3.jpeg" alt="Recuerdo">
+            <span>A tu lado siempre</span>
+        </div>
+
+        <div class="polaroid">
+            <img src="fotos/foto4.jpeg" alt="Recuerdo">
+            <span>La más hermosa</span>
+        </div>
+
+        </div>
+
+    <footer>Con mucho amor para Sely ❤️</footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('musica-cumple');
+            audio.volume = 0.5; 
+            
+            audio.play().catch(error => {
+                console.log("El navegador bloqueó el autoplay, pero sonará al primer toque.");
+                document.body.addEventListener('click', () => {
+                    audio.play();
+                }, { once: true });
+            });
+        });
+
+        function crearPetalo() {
+            const petalo = document.createElement('div');
+            petalo.classList.add('petalo');
+            
+            const size = Math.random() * 15 + 10 + 'px';
+            petalo.style.width = size;
+            petalo.style.height = size;
+            petalo.style.left = Math.random() * 100 + 'vw';
+            
+            const duracion = Math.random() * 3 + 4 + 's';
+            petalo.style.animationDuration = duracion;
+
+            document.body.appendChild(petalo);
+
+            setTimeout(() => {
+                petalo.remove();
+            }, 7000);
+        }
+
+        setInterval(crearPetalo, 300);
+    </script>
+</body>
+</html>
