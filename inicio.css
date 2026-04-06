@@ -11,7 +11,7 @@ body {
   width: 100vw;
   background: 
     linear-gradient(rgba(255, 120, 150, 0.4), rgba(255, 182, 193, 0.4)),
-    url('imagenes/fondo.jpg') center/cover no-repeat;
+    url('Sorpresa-Sely/imagenes/fondo.jpg') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
